@@ -1,0 +1,11 @@
+[
+	{
+		"title": "Welcome to my blog",
+		"date": "23 Apr, 2026",
+		"tag": [
+			"General", "Blog"
+		],
+		"lead": "This is my first blog here.",
+		"src": "blogs/blog1"
+	}
+] 

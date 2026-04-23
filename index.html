@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Liman | Blogs</title>
+   
+   <meta name="description" content="Writing blogs that are human-made and speak the truth.">
+   <meta name="author" content="Liman">
+   
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://limangit.github.io">
+   <meta property="og:title" content="Liman">
+   <meta property="og:description" content="Writing blogs that are human-made and speak the truth.">
+   <meta property="og:image" content="https://limangit.github.io/cdn/web/android-chrome-256x256.png">
+   
+   <link rel="shortcut icon" type="image/x-icon" href="https://limangit.github.io/cdn/web/favicon.ico">
+   <link rel="apple-touch-icon" sizes="180x180" href="https://limangit.github.io/cdn/web/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="https://limangit.github.io/cdn/web/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="https://limangit.github.io/cdn/web/favicon-16x16.png">
+   <link rel="manifest" href="https://limangit.github.io/cdn/web/site.webmanifest">
+   <link rel="mask-icon" href="https://limangit.github.io/cdn/web/safari-pinned-tab.svg" color="#5bbad5">
+   <meta name="msapplication-TileColor" content="#4F46E5">
+   <meta name="theme-color" content="#4F46E5">
+   
+   <meta property="twitter:card" content="summary_large_image">
+   <meta property="twitter:url" content="https://limangit.github.io">
+   <meta property="twitter:title" content="Liman">
+   <meta property="twitter:description" content="Writing blogs that are human-made and speak the truth.">
+   <meta property="twitter:image" content="https://limangit.github.io/cdn/web/android-chrome-256x256.png">
+   <meta name="robots" content="index, follow">
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Nunito:wght@400&display=swap" rel="stylesheet">
+   
+   <style>
+      :root {
+         color-scheme: dark;
+         --bg: #09090b;
+         --fg: #e4e4e7;
+         --muted: #a1a1aa;
+         --soft: #71717a;
+         --line: rgba(255, 255, 255, 0.10);
+         --card: #18181b;
+      }
+      
+      * {
+         box-sizing: border-box;
+      }
+      
+      html,
+      body {
+         margin: 0;
+         padding: 0;
+         background: var(--bg);
+         color: var(--fg);
+         font-family: "Inter", sans-serif;
+      }
+      
+      body {
+         line-height: 1.6;
+      }
+      
+      a {
+         color: inherit;
+         text-decoration: none;
+      }
+      
+      p {
+         text-align: justify;
+         margin: 0;
+      }
+      
+      img {
+         display: block;
+         max-width: 100%;
+      }
+      
+      .ser {
+         font-family: "Cormorant Garamond", serif;
+         font-weight: 700;
+      }
+      
+      .mono {
+         font-family: "IBM Plex Mono", monospace;
+      }
+      
+      .nav {
+         border-bottom: 1px solid var(--line);
+         position: sticky;
+         z-index: 1000;
+         background: var(--bg);
+         top: 0;
+      }
+      
+      .wrap {
+         max-width: 48rem;
+         margin: 0 auto;
+         padding: 0 1rem;
+      }
+      
+      .nav .wrap {
+         padding-top: 0.75rem;
+         padding-bottom: 0.75rem;
+         font-size: 0.95rem;
+         font-weight: 500;
+         color: #fff;
+      }
+      
+      main.wrap {
+         padding-top: 2rem;
+         padding-bottom: 3rem;
+      }
+      
+      .hero {
+         margin-top: 0;
+      }
+      
+      .title {
+         margin: 0;
+         font-size: clamp(3rem, 8vw, 5rem);
+         line-height: 0.95;
+         font-weight: 700;
+         letter-spacing: -0.03em;
+         color: #fff;
+      }
+      
+      .sub {
+         margin-top: 0.75rem;
+         font-size: 0.88rem;
+         line-height: 1.5;
+         color: var(--soft);
+      }
+      
+      .sub2 {
+         margin-top: 0.1rem;
+         font-size: 0.75rem;
+         line-height: 1.5;
+         color: var(--soft);
+      }
+      
+      .lead {
+         margin-top: 0.9rem;
+         max-width: 42rem;
+         font-size: 0.95rem;
+         line-height: 1.75;
+         color: #d4d4d8;
+      }
+      
+      section {
+         margin-top: 2.5rem;
+      }
+      
+      .chgroup {
+         display: flex;
+         margin: 5px 0;
+      }
+      
+      .chip {
+         border: 1px solid var(--line);
+         padding: 0.1rem 0.85rem;
+         background: rgba(255, 255, 255, 0.01);
+         font-family: "IBM Plex Mono", monospace;
+         font-weight: 600;
+      }
+      
+      h2 {
+         margin: 0;
+         font-family: "Cormorant Garamond", serif;
+         font-size: 1.45rem;
+         line-height: 1.1;
+         font-weight: 600;
+         color: #fff;
+         letter-spacing: -0.01em;
+      }
+      
+      .txt {
+         margin-top: 0.55rem;
+         max-width: 42rem;
+         font-size: 0.96rem;
+         line-height: 2;
+         color: #d4d4d8;
+         font-family: "Nunito", sans-serif;
+      }
+      
+      .row {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 1rem;
+      }
+      
+      .cnt {
+         font-size: 0.75rem;
+         color: var(--soft);
+      }
+      
+      .list {
+         margin-top: 1rem;
+         display: grid;
+         gap: 1rem;
+      }
+      
+      .card {
+         border: 1px solid var(--line);
+         background: rgba(24, 24, 27, 0.35);
+         overflow: hidden;
+      }
+      
+      .card2 {
+         cursor: pointer;
+      }
+      
+      .card2:hover {
+         border-color: rgba(255, 255, 255, 0.18);
+         background: rgba(255, 255, 255, 0.03);
+      }
+      
+      .ph {
+         width: 100%;
+         aspect-ratio: 16 / 9;
+         background: #27272a;
+      }
+      
+      .ph img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      
+      .bd {
+         padding: 0.85rem;
+      }
+      
+      .pt {
+         margin: 0;
+         color: #fff;
+         font-size: 0.95rem;
+         font-weight: 600;
+         line-height: 1.3;
+      }
+      
+      .ps {
+         margin-top: 0.2rem;
+         font-size: 0.78rem;
+         color: #a1a1aa;
+      }
+      
+      .lnk {
+         display: inline-block;
+         margin-top: 0.65rem;
+         margin-right: 1.4rem;
+         font-size: 0.78rem;
+         color: #d4d4d8;
+         font-family: "IBM Plex Mono", monospace;
+      }
+      
+      .lnk:hover {
+         text-decoration: underline;
+         text-underline-offset: 3px;
+      }
+      
+      .more {
+         font-size: 0.9rem;
+         color: var(--soft);
+      }
+      
+      .info {
+         margin-top: 0.75rem;
+         display: grid;
+         gap: 0.65rem;
+         font-size: 0.95rem;
+      }
+      
+      .box {
+         display: block;
+         border: 1px solid var(--line);
+         padding: 0.75rem 0.85rem;
+         font-weight: 500;
+         background: rgba(255, 255, 255, 0.01);
+      }
+      
+      .bold {
+         font-weight: 700;
+      }
+      
+      .box:hover {
+         border-color: rgba(255, 255, 255, 0.18);
+         background: rgba(255, 255, 255, 0.03);
+      }
+      
+      .footer {
+         margin-top: 3rem;
+         font-size: 0.75rem;
+         color: var(--soft);
+      }
+      
+      blockquote {
+         margin: 1.5rem 0;
+         padding: 0.75rem 1.1rem;
+         border-left: 2px solid rgba(255, 255, 255, 0.18);
+         color: var(--muted);
+         font-style: italic;
+         font-size: 0.85rem;
+      }
+      
+      blockquote p {
+         margin: 0;
+         text-align: left;
+      }
+      
+      
+      code {
+         font-family: "IBM Plex Mono", monospace;
+         font-size: 0.82em;
+         background: rgba(255, 255, 255, 0.06);
+         padding: 0.15em 0.4em;
+         border-radius: 2px;
+         color: #e4e4e7;
+      }
+      
+      
+      pre {
+         margin: 0;
+         overflow: auto;
+      }
+      
+      pre code {
+         background: none;
+         padding: 0;
+         font-size: 0.85rem;
+         line-height: 1.7;
+         color: #d4d4d8;
+      }
+      
+      
+      hr {
+         border: none;
+         border-top: 1px solid var(--line);
+         margin: 2rem 0;
+      }
+      
+      
+      .note {
+         margin: 1.5rem 0;
+         padding: 0.75rem 1rem;
+         border: 1px solid var(--line);
+         background: rgba(255, 255, 255, 0.02);
+         font-size: 0.88rem;
+         color: var(--muted);
+         line-height: 1.7;
+      }
+      
+      .note strong {
+         color: var(--fg);
+      }
+      
+      @media (max-width: 640px) {
+         main.wrap {
+            padding-top: 1.5rem;
+         }
+         
+         .title {
+            font-size: 3.2rem;
+         }
+         
+         .lead,
+         .txt {
+            font-size: 0.93rem;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <header class="nav">
+      <div class="wrap">Liman's Blogs</div>
+   </header>
+   
+   <main class="wrap" id="content">
+      
+      <section class="hero">
+         <h1 class="title ser">Blogs</h1>
+         
+         <div class="sub mono">
+            <p>Human written blogs that you would love.</p>
+         </div>
+      </section>
+      
+      <section id="posts">
+      </section>
+      
+   </main>
+   <main class="wrap">
+      <footer class="footer">
+         &copy; Liman 2026
+      </footer>
+   </main>
+   <script>
+      renderPosts();
+      
+      // To render posts from json
+      async function renderPosts() {
+         return fetch("blogs.json")
+            .then(r => r.json())
+            .then(d => {
+               const list = document.getElementById("posts");
+               if (!list) return;
+               
+               list.innerHTML = "";
+               
+               d.forEach(p => {
+                  const el = document.createElement("div");
+                  el.className = "card card2";
+                  el.innerHTML = `
+                  <div class="bd link" data-src="${p.src}">
+                   <h3 class="pt">${p.title}</h3>
+                   <span class="sub mono">
+                     ${p.date || ""} ${p.tag.length !== 0 ? "•" : ""} ${(p.tag || []).join(", ")}
+                   </span>
+                  </div>
+                  `;
+                  list.appendChild(el);
+               });
+            });
+      }
+      
+      // To fetch the blog and replace the content with it
+      const content = document.getElementById("content");
+      
+      async function loadPage(route) {
+         if (!route) {
+            content.innerHTML = `
+         <section class="hero">
+            <h1 class="title ser">Blogs</h1>
+            <div class="sub mono">
+               <p>Human written blogs that you would love.</p>
+            </div>
+         </section>
+         <section id="posts"></section>
+      `;
+            
+            await renderPosts();
+            
+            requestAnimationFrame(() => {
+               const y = sessionStorage.getItem("scrollY");
+               if (y !== null) window.scrollTo(0, parseInt(y, 10));
+            });
+            
+            return;
+         }
+         
+         try {
+            const posts = await fetch("blogs.json").then(r => r.json());
+            const post = posts.find(p => p.src === route);
+            
+            if (!post) {
+               content.innerHTML = "<p>Post not found.</p>";
+               return;
+            }
+            
+            const res = await fetch(route + ".html");
+            const html = await res.text();
+            
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            const body = doc.querySelector("main")?.innerHTML || html;
+            
+            const tags = (post.tag || []).join(", ");
+            const meta = `${post.date || ""}${(post.tag || []).length ? " • " + tags : ""}`;
+            
+            content.innerHTML = `
+             <section class="hero">
+              <h1 class="title ser">${post.title}</h1>
+              <div class="sub mono">
+                <p>${meta}</p>
+              </div>
+              <p class="lead">${post.lead}</p>
+             </section>
+             ${body}
+             `;
+         } catch {
+            content.innerHTML = "<p>Failed to load.</p>";
+         }
+      }
+      // Listens to click and finds blogs
+      document.addEventListener("click", (e) => {
+         const target = e.target.closest("[data-src]");
+         if (!target) return;
+         sessionStorage.setItem("scrollY", window.scrollY);
+         const route = target.getAttribute("data-src");
+         location.hash = route;
+         window.scrollTo(0, 0);
+      });
+      
+      // IDK ehat it does. found from stackoverflow
+      window.addEventListener("DOMContentLoaded", () => {
+         const route = location.hash.slice(1);
+         
+         loadPage(route);
+      });
+      // This too. looks same though
+      window.addEventListener("hashchange", () => {
+         const route = location.hash.slice(1);
+         loadPage(route);
+      });
+   </script>
+</body>
+
+</html>

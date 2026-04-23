@@ -1,0 +1,67 @@
+
+<!-- Cover Image -->
+<section>
+   <div class="ph">
+      <img src="https://placehold.co/1200x675/111111/e5e7eb?text=Zero-Day" alt="Abstract visualization of a zero-day vulnerability">
+   </div>
+</section>
+
+<!-- Content -->
+<section>
+   <h2 class="ser">Overview</h2>
+   
+   <p class="txt">
+      A zero-day vulnerability is unknown to the vendor at the time of exploitation. Attackers use this window to gain access before any patch or mitigation exists.
+   </p>
+   
+   <p class="txt">
+      In large-scale backend systems, the risk increases due to wide exposure. Systems must rely on detection and containment rather than prevention alone.
+   </p>
+</section>
+
+<section>
+   <h2 class="ser">Impact</h2>
+   
+   <p class="txt">
+      If the vulnerability exists in commonly used infrastructure, the impact can scale rapidly. A single flaw may affect thousands of services simultaneously.
+   </p>
+   
+   <div class="ph">
+      <img src="https://placehold.co/1200x675/151515/d1d5db?text=Infrastructure" alt="Server infrastructure representing large scale systems">
+   </div>
+</section>
+
+<section>
+   <h2 class="ser">Example</h2>
+    <blockquote>
+       This is an example block
+    </blockquote>
+   <p class="txt">
+      The following example demonstrates a basic injection vulnerability in a backend handler:
+   </p>
+   
+   <div class="card">
+      <div class="bd">
+         <pre class="mono" style="overflow:auto; font-size:0.85rem; line-height:1.7;">
+app.get("/user", (req, res) => {
+  const id = req.query.id;
+  db.query("SELECT * FROM users WHERE id = " + id, (err, data) => {
+    res.send(data);
+  });
+});
+</pre>
+      </div>
+   </div>
+   
+   <p class="txt">
+      This pattern allows injection. Parameterized queries or prepared statements are required to mitigate this issue.
+   </p>
+</section>
+
+<section>
+   <h2 class="ser">Conclusion</h2>
+   
+   <p class="txt">
+      Zero-day vulnerabilities cannot be fully prevented. The focus should be on reducing blast radius, improving observability, and applying patches quickly.
+   </p>
+</section>
