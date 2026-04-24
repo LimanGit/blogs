@@ -395,26 +395,32 @@
    </main>
    <main class="wrap">
       <footer class="footer">
-         &copy; Liman 2026
+         &copy; Liman 2026 > <a href="/blogs.json" class="lnk">blogs.json</a>
       </footer>
    </main>
    <script>
       renderPosts();
+      let blogCache = null;
       
+      async function getPosts() {
+         if (blogCache) return blogCache;
+         
+         const res = await fetch("blogs.json");
+         blogCache = await res.json();
+         return blogCache;
+      }
       // To render posts from json
       async function renderPosts() {
-         return fetch("blogs.json")
-            .then(r => r.json())
-            .then(d => {
-               const list = document.getElementById("posts");
-               if (!list) return;
-               
-               list.innerHTML = "";
-               
-               d.forEach(p => {
-                  const el = document.createElement("div");
-                  el.className = "card card2";
-                  el.innerHTML = `
+         return getPosts().then(d => {
+            const list = document.getElementById("posts");
+            if (!list) return;
+            
+            list.innerHTML = "";
+            
+            d.forEach(p => {
+               const el = document.createElement("div");
+               el.className = "card card2";
+               el.innerHTML = `
                   <div class="bd link" data-src="${p.src}">
                    <h3 class="pt">${p.title}</h3>
                    <span class="sub mono">
@@ -422,9 +428,9 @@
                    </span>
                   </div>
                   `;
-                  list.appendChild(el);
-               });
+               list.appendChild(el);
             });
+         });
       }
       
       // To fetch the blog and replace the content with it
